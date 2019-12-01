@@ -14,7 +14,7 @@ PROC
 					
 					CMP R2, R8 ; if the pin was high
 					BEQ reset_gpio;if equal , then reset gpio pin
-					MOV R8,#COMPARE_VALUE
+					MOV R8,#COMPARE_VALUE ;
 					STR R8,[R1]
 					B finish			
 					
