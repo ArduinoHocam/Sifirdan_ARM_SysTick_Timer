@@ -14,7 +14,7 @@ __main
 					BL INIT_TIMER
 					BL INIT_GPIO
 
-loop				B loop						
+loop				B loop;do whatever you want here,stupid loop for example		 				
 					
 					
 					END

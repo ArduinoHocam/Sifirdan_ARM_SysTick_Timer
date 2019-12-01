@@ -12,13 +12,13 @@ INIT_TIMER
 PROC
 			LDR R1,=STCTRL
 			LDR R0,[R1]
-			BIC R0,#0xFF ;disable first 
+			BIC R0,#0xFF ;disable first with bit clear instruction
 			STR R0, [R1]
 			
-			LDR R0,=LOAD_VAL
+			LDR R0,=LOAD_VAL ; load the reload value
 			STR R0,[R1,#4];offset is 4  for reload register
-			STR R0,[R1,#8]
-			MOV R4,#0x3 ;enable timer 
+			STR R0,[R1,#8];offset is 8 for stcurrent register, hence we use post index without update 
+			MOV R4,#0x3 ;start timer for counting
 			STR R4,[R1]
 			BX LR
 			ENDP

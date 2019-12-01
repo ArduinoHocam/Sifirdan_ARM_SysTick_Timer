@@ -1,5 +1,5 @@
 GPIO_PORTF_DATA		EQU	0x40025038; DATA REGISTER WITH MASK PF1 PF2 FP3	
-COMPARE_VALUE		EQU 0x0E
+COMPARE_VALUE		EQU 0x0E  ;used for the gpio state comparison
 		
 					AREA    systic_handler, READONLY, CODE
 					THUMB
@@ -8,7 +8,7 @@ COMPARE_VALUE		EQU 0x0E
 SysTick_Handler
 PROC				
 		
-					LDR R1,=GPIO_PORTF_DATA
+					LDR R1,=GPIO_PORTF_DATA ; read the masked gpio data
 					LDR R2,[R1]
 					MOV R8,#COMPARE_VALUE
 					
