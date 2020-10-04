@@ -21,6 +21,6 @@ PROC
 reset_gpio			MOV R8,#0x00 ;reset gpio
 					STR R8,[R1]
 			
-					
+finish					
 					BX LR
 					ENDP
